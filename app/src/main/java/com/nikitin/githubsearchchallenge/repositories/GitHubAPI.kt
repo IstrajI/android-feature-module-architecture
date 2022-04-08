@@ -1,5 +1,7 @@
 package com.nikitin.githubsearchchallenge.repositories
 
+import com.nikitin.githubsearchchallenge.data.model.GitHubRepositoryModel
+import com.nikitin.githubsearchchallenge.data.model.GitHubSearchResponseModel
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers
@@ -18,7 +20,7 @@ interface GitHubAPI {
 
     @Headers("Content-Type: application/json")
     @GET("search/repositories")
-    suspend fun searchUser2(
+    suspend fun searchRepository(
         @Query("q") name: String
-    ): Response<String>
+    ): Response<GitHubSearchResponseModel<GitHubRepositoryModel>>
 }

@@ -1,0 +1,3 @@
+package com.nikitin.githubsearchchallenge.data.model
+
+interface IGitHubSearchResponseItemModel

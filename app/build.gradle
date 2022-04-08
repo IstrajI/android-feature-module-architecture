@@ -37,8 +37,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility kotlin_version
-        targetCompatibility kotlin_version
+        sourceCompatibility "11"
+        targetCompatibility "11"
     }
     kotlinOptions {
         jvmTarget = '1.8'
