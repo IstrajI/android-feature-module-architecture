@@ -6,8 +6,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.nikitin.githubsearchchallenge.databinding.SearchRepositoryItemBinding
+import com.nikitin.githubsearchchallenge.feature.repositorysearch.entity.RepositoryUIModel
 
-class RepositorySearchAdapter: ListAdapter<RepositorySearchUIModel, RepositorySearchAdapter.SearchRepositoryItemViewHolder>(DiffCallback()) {
+class RepositorySearchAdapter: ListAdapter<RepositoryUIModel, RepositorySearchAdapter.SearchRepositoryItemViewHolder>(DiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchRepositoryItemViewHolder {
         val itemBinding = SearchRepositoryItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -19,7 +20,7 @@ class RepositorySearchAdapter: ListAdapter<RepositorySearchUIModel, RepositorySe
     }
 
     class SearchRepositoryItemViewHolder(private val binding: SearchRepositoryItemBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: RepositorySearchUIModel) {
+        fun bind(item: RepositoryUIModel) {
             binding.apply {
                 name.text = item.name
                 description.text = item.description
@@ -31,8 +32,8 @@ class RepositorySearchAdapter: ListAdapter<RepositorySearchUIModel, RepositorySe
         }
     }
 
-    private class DiffCallback : DiffUtil.ItemCallback<RepositorySearchUIModel>() {
-        override fun areItemsTheSame(oldItem: RepositorySearchUIModel, newItem: RepositorySearchUIModel) = oldItem.id == newItem.id
-        override fun areContentsTheSame(oldItem: RepositorySearchUIModel, newItem: RepositorySearchUIModel) = oldItem == newItem
+    private class DiffCallback : DiffUtil.ItemCallback<RepositoryUIModel>() {
+        override fun areItemsTheSame(oldItem: RepositoryUIModel, newItem: RepositoryUIModel) = oldItem.id == newItem.id
+        override fun areContentsTheSame(oldItem: RepositoryUIModel, newItem: RepositoryUIModel) = oldItem == newItem
     }
 }

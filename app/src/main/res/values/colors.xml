@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="primary">@color/yellow_orange</color>
+    <color name="primary_dark">@color/ochre</color>
+    <color name="accent">@color/white</color>
+
+    <color name="font_color">@color/black_87</color>
+    <color name="font_color_caption">@color/black_60</color>
+
     <color name="white">#FFFFFFFF</color>
+    <color name="white_87">#DEFFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+    <color name="white_38">#FFFFFFFF</color>
+    <color name="negroni">#FFE4C6</color>
+    <color name="merino">#f8f3ee</color>
+    <color name="ochre">#C77A1A</color>
+    <color name="yellow_orange">#FFA94C</color>
+    <color name="pomegranate">#f44336</color>
+
+    <color name="black_87">#DE000000</color>
+    <color name="black_60">#99000000</color>
+    <color name="black_38">#61000000</color>
+    <color name="black_5">#0D000000</color>
+
+    <color name="fiord">#3B5565</color>
+    <color name="outer_space">#30353C</color>
+    <color name="ebony_clay">#1A2229</color>
+    <color name="woodsmoke">#101517</color>
 </resources>
