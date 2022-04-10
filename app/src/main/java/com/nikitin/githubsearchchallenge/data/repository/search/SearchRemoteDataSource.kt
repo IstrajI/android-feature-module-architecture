@@ -14,7 +14,7 @@ class SearchRemoteDataSource @Inject constructor(private val api: GitHubAPI) {
     suspend fun searchRepository(name: String, page: Int = 1): Outcome<SearchResult> {
         try {
             val response = api.searchRepository(name, page)
-            if (!response.isSuccessful) return Outcome.ErrorOutcome(response.message())
+            if (!response.isSuccessful) return Outcome.ErrorOutcome(response.code().toString())
             return Outcome.SuccessOutcome(SearchResponseModelToSearchResult().map(response.body()!!))
         } catch (ex: Exception) {
             return Outcome.ErrorOutcome(ex.message)
