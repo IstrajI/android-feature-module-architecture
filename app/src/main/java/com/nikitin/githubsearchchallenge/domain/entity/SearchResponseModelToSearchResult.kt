@@ -18,7 +18,7 @@ class SearchResponseModelToSearchResult {
                         language = it.language,
                         updated = it.updatedAt,
                         licenseName = it.license?.name,
-                        url = it.url
+                        url = it.htmlUrl
                     )
                 })
         }
