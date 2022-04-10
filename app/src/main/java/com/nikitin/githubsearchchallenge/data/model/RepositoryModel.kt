@@ -20,7 +20,7 @@ data class RepositoryModel(
     @SerializedName("size") var size: Int,
     @SerializedName("stargazers_count") var stargazersCount: Int,
     @SerializedName("watchers_count") var watchersCount: Int,
-    @SerializedName("language") var language: String,
+    @SerializedName("language") var language: String?,
     @SerializedName("forks_count") var forksCount: Int,
     @SerializedName("open_issues_count") var openIssuesCount: Int,
     @SerializedName("master_branch") var masterBranch: String,

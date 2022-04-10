@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GitHubSearchChallenge</string>
+    <string name="search_github_title">Search GitHub</string>
 </resources>

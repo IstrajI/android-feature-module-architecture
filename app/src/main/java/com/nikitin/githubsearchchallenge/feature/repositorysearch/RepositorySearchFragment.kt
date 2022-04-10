@@ -1,10 +1,11 @@
 package com.nikitin.githubsearchchallenge.feature.repositorysearch
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,11 +16,11 @@ import com.nikitin.githubsearchchallenge.di.ViewModelFactory
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
-class RepositorySearchFragment: DaggerFragment() {
+class RepositorySearchFragment : DaggerFragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
     private val viewModel by viewModels<RepositorySearchViewModel> { viewModelFactory }
-    private val activityViewModel by viewModels<MainViewModel> ({activity as MainActivity}) { viewModelFactory }
+    private val activityViewModel by viewModels<MainViewModel>({ activity as MainActivity }) { viewModelFactory }
 
     private var _binding: FragmentRepositorySearchBinding? = null
     private val binding get() = _binding!!
@@ -45,7 +46,22 @@ class RepositorySearchFragment: DaggerFragment() {
         }
 
         activityViewModel.searchQuery.observe(viewLifecycleOwner) {
+            if (it.isNullOrEmpty()) return@observe
             viewModel.search(it)
+        }
+
+        viewModel.error.observe(viewLifecycleOwner) {
+            if (it == null) return@observe
+            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+            viewModel.setErrorShown()
+        }
+
+        viewModel.isLoading.observe(viewLifecycleOwner) {
+            binding.progressBar.isVisible = it
+        }
+
+        viewModel.totalSearchResultsAmount.observe(viewLifecycleOwner) {
+            binding.searchResultsAmount.text = it.toString()
         }
 
         binding.searchResults.addOnScrollListener(object : RecyclerView.OnScrollListener() {
