@@ -3,16 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="8dp"
-    android:paddingTop="8dp"
-    android:paddingEnd="8dp"
-    android:paddingBottom="8dp">
+    android:paddingStart="14dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="24dp"
+    android:paddingBottom="16dp">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/repositoryImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingEnd="8dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:src="@drawable/ic_book"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,38 +21,41 @@
         style="@style/TextMain"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/repositoryImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/repositoryImage"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/repositoryImage" />
 
     <TextView
         android:id="@+id/description"
-        style="@style/TextCaption"
+        style="@style/TextBody"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/repositoryImage"
+        app:layout_constraintStart_toStartOf="@+id/name"
         app:layout_constraintTop_toBottomOf="@+id/name" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/starsImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:src="@drawable/ic_star"
-        app:layout_constraintStart_toEndOf="@+id/repositoryImage"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
+        app:layout_constraintBottom_toBottomOf="@+id/stars"
+        app:layout_constraintStart_toStartOf="@+id/name" />
 
     <TextView
         android:id="@+id/stars"
-        style="@style/TextCaption"
+        style="@style/TextTiny"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/starsImage"
-        app:layout_constraintStart_toEndOf="@+id/starsImage" />
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/starsImage"
+        app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <TextView
         android:id="@+id/language"
-        style="@style/TextCaption"
+        style="@style/TextTiny"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -62,7 +64,7 @@
 
     <TextView
         android:id="@+id/license"
-        style="@style/TextCaption"
+        style="@style/TextTiny"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -71,7 +73,7 @@
 
     <TextView
         android:id="@+id/updated"
-        style="@style/TextCaption"
+        style="@style/TextTiny"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

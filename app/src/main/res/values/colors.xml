@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">@color/yellow_orange</color>
-    <color name="primary_dark">@color/ochre</color>
-    <color name="accent">@color/white</color>
+    <color name="primary">@color/pale_sky</color>
+    <color name="primary_dark">@color/shark</color>
+    <color name="accent">@color/fiord</color>
 
     <color name="font_color">@color/black_87</color>
     <color name="font_color_caption">@color/black_60</color>
+    <color name="mtrl_textinput_default_box_stroke_color">@color/black_20</color>
+    <color name="input_layout_box_background_color">@color/white</color>
+    <color name="input_layout_hint_color">@color/black_60</color>
+    <color name="input_layout_helper_text_color">@color/black_38</color>
 
     <color name="white">#FFFFFFFF</color>
     <color name="white_87">#DEFFFFFF</color>
     <color name="white_60">#99FFFFFF</color>
-    <color name="white_38">#FFFFFFFF</color>
+    <color name="white_38">#61FFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
     <color name="negroni">#FFE4C6</color>
     <color name="merino">#f8f3ee</color>
     <color name="ochre">#C77A1A</color>
     <color name="yellow_orange">#FFA94C</color>
     <color name="pomegranate">#f44336</color>
 
+    <color name="pale_sky">#6E7781</color>
+    <color name="shark">#24292F</color>
+    <color name="bunker_approx">#161b22</color>
+    <color name="bunker_solid">#0D1117</color>
+    <color name="blue_bayoux">#496475</color>
+
     <color name="black_87">#DE000000</color>
     <color name="black_60">#99000000</color>
     <color name="black_38">#61000000</color>
+    <color name="black_20">#33000000</color>
+    <color name="black_10">#1A000000</color>
     <color name="black_5">#0D000000</color>
 
     <color name="fiord">#3B5565</color>

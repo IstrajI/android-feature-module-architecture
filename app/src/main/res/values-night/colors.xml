@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#425967</color>
-    <color name="primary_dark">#141A20</color>
-    <color name="accent">@color/white</color>
+    <color name="primary">@color/bunker_approx</color>
+    <color name="primary_dark">@color/bunker_solid</color>
+    <color name="accent">@color/blue_bayoux</color>
 
     <color name="font_color">@color/white</color>
     <color name="font_color_caption">@color/white_87</color>
+    <color name="mtrl_textinput_default_box_stroke_color">@color/white_60</color>
+    <color name="input_layout_box_background_color">@color/primary</color>
+    <color name="input_layout_hint_color">@color/white_87</color>
+    <color name="input_layout_helper_text_color">@color/white_60</color>
 </resources>

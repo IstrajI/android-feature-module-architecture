@@ -5,12 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nikitin.githubsearchchallenge.MainActivity
 import com.nikitin.githubsearchchallenge.MainViewModel
+import com.nikitin.githubsearchchallenge.R
 import com.nikitin.githubsearchchallenge.databinding.FragmentRepositorySearchBinding
 import com.nikitin.githubsearchchallenge.di.ViewModelFactory
 import dagger.android.support.DaggerFragment
@@ -38,9 +41,14 @@ class RepositorySearchFragment : DaggerFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val repositorySearchAdapter = RepositorySearchAdapter()
-        binding.searchResults.adapter = repositorySearchAdapter
+        binding.searchResults.apply {
+            adapter = repositorySearchAdapter
+            val horizontalDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL).apply {
+                setDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.horizontal_devider_drawable)!!)
+            }
+            addItemDecoration(horizontalDecoration)
+        }
 
-        viewModel.searchNext()
         viewModel.repositoryItems.observe(viewLifecycleOwner) {
             repositorySearchAdapter.submitList(it)
         }
@@ -61,7 +69,8 @@ class RepositorySearchFragment : DaggerFragment() {
         }
 
         viewModel.totalSearchResultsAmount.observe(viewLifecycleOwner) {
-            binding.searchResultsAmount.text = it.toString()
+            binding.searchResultsAmount.text =
+                resources.getString(R.string.search_repositories_match, it)
         }
 
         binding.searchResults.addOnScrollListener(object : RecyclerView.OnScrollListener() {
