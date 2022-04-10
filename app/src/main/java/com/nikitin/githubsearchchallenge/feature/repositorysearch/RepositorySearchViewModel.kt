@@ -56,6 +56,28 @@ class RepositorySearchViewModel @Inject constructor(private val repositoryIntera
         }
     }
 
+    fun search(query: String) {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                val searchResults = repositoryInteractor.searchRepositoryNextPage(
+                    name = query,
+                    page = 1
+                )
+                when (searchResults) {
+                    is Outcome.SuccessOutcome -> {
+                        val data = GitHubSearchResponseToSearchResultUIModel().map(searchResults.data)
+                        _repositoryItems.postValue(
+                            (data.result))
+                        //lastSearchPage++
+                    }
+                    is Outcome.ErrorOutcome -> {
+                        Log.d("TestPish", "error ${searchResults.errorMessage}")
+                    }
+                }
+            }
+        }
+    }
+
     object Constants {
         const val THRESHOLD = 4
     }
