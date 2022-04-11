@@ -9,7 +9,6 @@ import javax.inject.Singleton
 
 @Singleton
 class SearchResponseModelToSearchResult @Inject constructor() {
-    //todo: here is a shit
     fun mapRepositorySearch(from: SearchResponseModel<RepositoryModel>): SearchResult<Repository> {
         return from.run {
             SearchResult(totalCount = totalCount,

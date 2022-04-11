@@ -14,7 +14,6 @@ class SearchRemoteDataSource @Inject constructor(
     private val api: GitHubAPI,
     private val searchResponseModelToSearchResult: SearchResponseModelToSearchResult
 ) {
-    //todo search result need to be typed
     suspend fun searchRepository(name: String, page: Int = 1): Outcome<SearchResult<Repository>> {
         try {
             val response = api.searchRepository(name, page)

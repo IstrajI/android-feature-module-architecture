@@ -7,7 +7,6 @@ import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.Query
 
-
 interface GitHubAPI {
     @Headers("Content-Type: application/json")
     @GET("search/repositories")
