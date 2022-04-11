@@ -2,10 +2,7 @@ package com.nikitin.githubsearchchallenge.di.component
 
 import android.app.Application
 import com.nikitin.githubsearchchallenge.GitHubApplication
-import com.nikitin.githubsearchchallenge.di.module.ActivityBindingModule
-import com.nikitin.githubsearchchallenge.di.module.AppModule
-import com.nikitin.githubsearchchallenge.di.module.FragmentBindingModule
-import com.nikitin.githubsearchchallenge.di.module.ViewModelBindingModule
+import com.nikitin.githubsearchchallenge.di.module.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -17,6 +14,7 @@ import javax.inject.Singleton
     modules = [AndroidSupportInjectionModule::class,
         AppModule::class,
         FragmentBindingModule::class,
+        RepositoryModule::class,
         ViewModelBindingModule::class,
         ActivityBindingModule::class]
 )

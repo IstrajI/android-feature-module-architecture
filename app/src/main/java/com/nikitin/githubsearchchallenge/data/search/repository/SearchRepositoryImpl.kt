@@ -4,13 +4,14 @@ import com.nikitin.githubsearchchallenge.data.network.Outcome
 import com.nikitin.githubsearchchallenge.data.search.datasource.SearchRemoteDataSource
 import com.nikitin.githubsearchchallenge.domain.search.model.Repository
 import com.nikitin.githubsearchchallenge.domain.search.model.SearchResult
+import com.nikitin.githubsearchchallenge.domain.search.repository.SearchRepository
 import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class SearchRepository @Inject constructor(private val searchRemoteDataSource: SearchRemoteDataSource) {
+class SearchRepositoryImpl @Inject constructor(private val searchRemoteDataSource: SearchRemoteDataSource): SearchRepository {
 
-    suspend fun searchRepository(name: String, page: Int = 1): Outcome<SearchResult<Repository>> {
+    override suspend fun searchRepository(name: String, page: Int): Outcome<SearchResult<Repository>> {
         return searchRemoteDataSource.searchRepository(name, page)
     }
 }
