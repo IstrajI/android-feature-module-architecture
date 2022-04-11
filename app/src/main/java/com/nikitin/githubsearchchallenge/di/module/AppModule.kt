@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.google.gson.GsonBuilder
 import com.nikitin.githubsearchchallenge.BuildConfig
-import com.nikitin.githubsearchchallenge.repositories.GitHubAPI
+import com.nikitin.githubsearchchallenge.data.network.GitHubAPI
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

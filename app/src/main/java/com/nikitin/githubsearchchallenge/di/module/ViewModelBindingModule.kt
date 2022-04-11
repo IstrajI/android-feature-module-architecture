@@ -2,10 +2,10 @@ package com.nikitin.githubsearchchallenge.di.module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.nikitin.githubsearchchallenge.MainViewModel
+import com.nikitin.githubsearchchallenge.presentation.main.MainViewModel
 import com.nikitin.githubsearchchallenge.di.ViewModelFactory
 import com.nikitin.githubsearchchallenge.di.ViewModelKey
-import com.nikitin.githubsearchchallenge.feature.repositorysearch.RepositorySearchViewModel
+import com.nikitin.githubsearchchallenge.presentation.search.repository.RepositorySearchViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
