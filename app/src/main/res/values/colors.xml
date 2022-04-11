@@ -10,6 +10,7 @@
     <color name="input_layout_box_background_color">@color/white</color>
     <color name="input_layout_hint_color">@color/black_60</color>
     <color name="input_layout_helper_text_color">@color/black_38</color>
+    <color name="font_color_repository_title">#2069DA</color>
 
     <color name="white">#FFFFFFFF</color>
     <color name="white_87">#DEFFFFFF</color>

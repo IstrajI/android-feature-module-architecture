@@ -27,7 +27,7 @@ class RepositorySearchAdapter: ListAdapter<RepositoryUIModel, RepositorySearchAd
             binding.apply {
                 name.text = item.name
                 description.text = item.description
-                stars.text = item.stars.toString()
+                stars.text = item.stars
                 language.text = item.language
                 license.text = item.licenseName
                 updated.text = item.updated

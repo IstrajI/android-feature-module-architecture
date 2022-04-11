@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.nikitin.githubsearchchallenge"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 32
         versionCode 1
         versionName "1.0"
@@ -50,7 +50,7 @@ android {
 }
 
 dependencies {
-
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     //UI dependencies

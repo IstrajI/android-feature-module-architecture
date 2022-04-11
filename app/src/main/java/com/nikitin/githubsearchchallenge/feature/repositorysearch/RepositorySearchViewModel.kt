@@ -13,15 +13,18 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class RepositorySearchViewModel @Inject constructor(private val repositoryInteractor: SearchInteractor) :
+class RepositorySearchViewModel @Inject constructor(
+    private val repositoryInteractor: SearchInteractor,
+    private val gitHubSearchResponseToSearchResultUIModel: GitHubSearchResponseToSearchResultUIModel
+) :
     ViewModel() {
     private val _repositoryItems =
         MutableLiveData<List<RepositoryUIModel>>()
     var repositoryItems: LiveData<List<RepositoryUIModel>> = _repositoryItems
 
     private val _totalSearchResultsAmount =
-        MutableLiveData<Int>()
-    var totalSearchResultsAmount: LiveData<Int> = _totalSearchResultsAmount
+        MutableLiveData<String>()
+    var totalSearchResultsAmount: LiveData<String> = _totalSearchResultsAmount
 
     private val _isLoading =
         MutableLiveData<Boolean>()
@@ -45,7 +48,7 @@ class RepositorySearchViewModel @Inject constructor(private val repositoryIntera
         when (searchResults) {
             is Outcome.SuccessOutcome -> {
                 val data =
-                    GitHubSearchResponseToSearchResultUIModel().map(searchResults.data)
+                    gitHubSearchResponseToSearchResultUIModel.map(searchResults.data)
                 lastSearchPage = FIRST_PAGE
                 lastSearchName = phrase
                 _repositoryItems.postValue(data.result)
@@ -69,7 +72,7 @@ class RepositorySearchViewModel @Inject constructor(private val repositoryIntera
         when (searchResults) {
             is Outcome.SuccessOutcome -> {
                 val data =
-                    GitHubSearchResponseToSearchResultUIModel().map(searchResults.data)
+                    gitHubSearchResponseToSearchResultUIModel.map(searchResults.data)
                 _repositoryItems.postValue(
                     (_repositoryItems.value ?: listOf()) + data.result
                 )

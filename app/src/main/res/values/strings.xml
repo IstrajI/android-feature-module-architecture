@@ -1,6 +1,16 @@
 <resources>
-    <string name="app_name">GitHubSearchChallenge</string>
+    <string name="app_name">GitSearch</string>
     <string name="search_github_title">Search GitHub repositories</string>
-    <string name="search_repositories_match">%1$d repository results</string>
+    <string name="search_repositories_match">%1$s repository results</string>
     <string name="search_repositories_default_title">Search more than 298M repositories</string>
+
+    <string name="updated_title">Updated</string>
+    <string name="updated_on_title">Updated on</string>
+
+    <string name="date_formatter_today">today</string>
+    <string name="date_formatter_date">dd MMM yy</string>
+    <plurals name="date_formatter_days_ago">
+        <item quantity="one">%1$d day ago</item>
+        <item quantity="other">%1$d days ago</item>
+    </plurals>
 </resources>

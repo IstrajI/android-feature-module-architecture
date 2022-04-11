@@ -1,5 +1,7 @@
 package com.nikitin.githubsearchchallenge.di.module
 
+import android.app.Application
+import android.content.Context
 import com.google.gson.GsonBuilder
 import com.nikitin.githubsearchchallenge.BuildConfig
 import com.nikitin.githubsearchchallenge.repositories.GitHubAPI
@@ -14,6 +16,10 @@ import javax.inject.Singleton
 
 @Module
 class AppModule {
+    @Provides
+    @Singleton
+    internal fun provideContext(application: Application): Context = application
+
     @Provides
     @Singleton
     fun provideGsonConverterFactory(): GsonConverterFactory {
