@@ -12,7 +12,7 @@ class GitHubSearchResponseToSearchResultUIModel @Inject constructor(
     fun map(from: SearchResult): SearchResultUIModel {
         return from.run {
             SearchResultUIModel(
-                totalCount = numberFormatter.commaFormat(totalCount),
+                totalCount = totalCount,
                 isUncompleted = isUncompleted,
                 result = result.map {
                     RepositoryUIModel(

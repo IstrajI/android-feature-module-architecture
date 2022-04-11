@@ -6,7 +6,7 @@ data class RepositoryUIModel(
     val description: String?,
     val stars: String,
     val language: String?,
-    val updated: String,
+    val updated: String?,
     val licenseName: String?,
     val url: String
 )

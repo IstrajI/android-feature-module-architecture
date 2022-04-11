@@ -23,8 +23,8 @@ class RepositorySearchViewModel @Inject constructor(
     var repositoryItems: LiveData<List<RepositoryUIModel>> = _repositoryItems
 
     private val _totalSearchResultsAmount =
-        MutableLiveData<String>()
-    var totalSearchResultsAmount: LiveData<String> = _totalSearchResultsAmount
+        MutableLiveData<Int>()
+    var totalSearchResultsAmount: LiveData<Int> = _totalSearchResultsAmount
 
     private val _isLoading =
         MutableLiveData<Boolean>()
@@ -61,29 +61,33 @@ class RepositorySearchViewModel @Inject constructor(
         _isLoading.postValue(false)
     }
 
-    fun searchNext() = viewModelScope.launch(Dispatchers.IO) {
-        if (_isLoading.value == true) return@launch
+    private fun searchNext() {
+        if (_isLoading.value == true
+            || (_totalSearchResultsAmount.value ?: 0) <= (_repositoryItems.value?.size ?: 0)
+        ) return
         _isLoading.postValue(true)
 
-        val searchResults = repositoryInteractor.searchRepository(
-            name = lastSearchName,
-            page = lastSearchPage + 1
-        )
-        when (searchResults) {
-            is Outcome.SuccessOutcome -> {
-                val data =
-                    gitHubSearchResponseToSearchResultUIModel.map(searchResults.data)
-                _repositoryItems.postValue(
-                    (_repositoryItems.value ?: listOf()) + data.result
-                )
-                lastSearchPage++
+        viewModelScope.launch(Dispatchers.IO) {
+            val searchResults = repositoryInteractor.searchRepository(
+                name = lastSearchName,
+                page = lastSearchPage + 1
+            )
+            when (searchResults) {
+                is Outcome.SuccessOutcome -> {
+                    val data =
+                        gitHubSearchResponseToSearchResultUIModel.map(searchResults.data)
+                    _repositoryItems.postValue(
+                        (_repositoryItems.value ?: listOf()) + data.result
+                    )
+                    lastSearchPage++
+                }
+                is Outcome.ErrorOutcome -> {
+                    _error.postValue(searchResults.errorMessage)
+                }
             }
-            is Outcome.ErrorOutcome -> {
-                _error.postValue(searchResults.errorMessage)
-            }
-        }
 
-        _isLoading.postValue(false)
+            _isLoading.postValue(false)
+        }
     }
 
     fun onScrolled(lastVisibleItemPosition: Int) {
