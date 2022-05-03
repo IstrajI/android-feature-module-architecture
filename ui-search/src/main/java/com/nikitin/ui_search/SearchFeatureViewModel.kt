@@ -1,11 +1,11 @@
-package com.nikitin.githubsearchchallenge.presentation.main
+package com.nikitin.ui_search
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject
 
-class MainViewModel @Inject constructor() : ViewModel() {
+class SearchFeatureViewModel @Inject constructor() : ViewModel() {
     private val _searchQuery = MutableLiveData<String>()
     val searchQuery: LiveData<String> = _searchQuery
 

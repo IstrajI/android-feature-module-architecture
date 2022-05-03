@@ -1,7 +1,7 @@
-package com.nikitin.githubsearchchallenge.data.network
+package com.nikitin.datasource.network
 
-import com.nikitin.githubsearchchallenge.data.search.model.RepositoryModel
-import com.nikitin.githubsearchchallenge.data.search.model.SearchResponseModel
+import com.nikitin.datasource.search.remote.model.RepositoryModel
+import com.nikitin.datasource.search.remote.model.SearchResponseModel
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Headers

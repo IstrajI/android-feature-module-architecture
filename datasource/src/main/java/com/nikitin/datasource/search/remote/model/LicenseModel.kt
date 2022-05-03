@@ -1,4 +1,4 @@
-package com.nikitin.githubsearchchallenge.data.search.model
+package com.nikitin.datasource.search.remote.model
 
 import com.google.gson.annotations.SerializedName
 

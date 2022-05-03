@@ -1,15 +1,16 @@
-package com.nikitin.githubsearchchallenge.domain.search.mapper
+package com.nikitin.datasource.search.remote.mapper
 
-import com.nikitin.githubsearchchallenge.data.search.model.RepositoryModel
-import com.nikitin.githubsearchchallenge.data.search.model.SearchResponseModel
-import com.nikitin.githubsearchchallenge.domain.search.model.Repository
-import com.nikitin.githubsearchchallenge.domain.search.model.SearchResult
+import com.nikitin.datasource.search.remote.model.RepositoryModel
+import com.nikitin.datasource.search.remote.model.SearchResponseModel
+import com.nikitin.core.search.model.Repository
+import com.nikitin.core.search.model.SearchResult
 import javax.inject.Inject
 import javax.inject.Singleton
 
+//todo split into 2
 @Singleton
-class SearchResponseModelToSearchResult @Inject constructor() {
-    fun mapRepositorySearch(from: SearchResponseModel<RepositoryModel>): SearchResult<Repository> {
+class RepositorySearchResponseMapper @Inject constructor() {
+    fun toRepositorySearch(from: SearchResponseModel<RepositoryModel>): SearchResult<Repository> {
         return from.run {
             SearchResult(totalCount = totalCount,
                 isUncompleted = incompleteResults,

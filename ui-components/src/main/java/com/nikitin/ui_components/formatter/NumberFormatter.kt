@@ -1,7 +1,7 @@
-package com.nikitin.githubsearchchallenge.presentation.formatter
+package com.nikitin.ui_components.formatter
 
-import com.nikitin.githubsearchchallenge.presentation.formatter.NumberFormatter.Constants.THOUSAND
-import com.nikitin.githubsearchchallenge.presentation.formatter.NumberFormatter.Constants.THOUSANDS_SYMBOL
+import com.nikitin.ui_components.formatter.NumberFormatter.Constants.THOUSAND
+import com.nikitin.ui_components.formatter.NumberFormatter.Constants.THOUSANDS_SYMBOL
 import java.text.NumberFormat
 import java.util.*
 import javax.inject.Inject
