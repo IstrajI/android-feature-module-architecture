@@ -30,10 +30,11 @@ The app has following packages:
 * core - module for common of all the modules
 
 ### Screenshots
-<div id="screenshot3">
+<div id="screenshot3">    
     <img src="https://user-images.githubusercontent.com/9091709/166574114-1797d00d-2e0b-4eee-ac06-a7f9eb040c23.jpg"  width="432" height="936"/>
     <img src="https://user-images.githubusercontent.com/9091709/166574118-45f71a09-7044-4618-ab7c-45550773374a.jpg"  width="432" height="936"/>
 </div>
+
 <div id="screenshot3">
     <img src="https://user-images.githubusercontent.com/9091709/166574122-64bd63a9-cd99-4c48-a24c-f636c134040d.jpg"  width="432" height="936"/>
     <img src="https://user-images.githubusercontent.com/9091709/166574124-8ff9577d-1f72-4d7c-bdb7-7b447950b796.jpg"  width="432" height="936"/>
