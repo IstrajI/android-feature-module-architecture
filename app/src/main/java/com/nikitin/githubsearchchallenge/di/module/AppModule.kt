@@ -3,8 +3,8 @@ package com.nikitin.githubsearchchallenge.di.module
 import android.app.Application
 import android.content.Context
 import com.google.gson.GsonBuilder
-import com.nikitin.githubsearchchallenge.BuildConfig
-import com.nikitin.githubsearchchallenge.data.network.GitHubAPI
+import com.nikitin.datasource.BuildConfig
+import com.nikitin.datasource.network.GitHubAPI
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient

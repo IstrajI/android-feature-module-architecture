@@ -1,0 +1,11 @@
+<resources>
+    <string name="updated_title">Updated</string>
+    <string name="updated_on_title">Updated on</string>
+
+    <string name="date_formatter_today">today</string>
+    <string name="date_formatter_date">dd MMM yy</string>
+    <plurals name="date_formatter_days_ago">
+        <item quantity="one">%1$d day ago</item>
+        <item quantity="other">%1$d days ago</item>
+    </plurals>
+</resources>

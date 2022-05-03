@@ -1,0 +1,5 @@
+<resources>
+    <string name="search_github_title">Search GitHub repositories</string>
+    <string name="search_repositories_match">%1$s repository results</string>
+    <string name="search_repositories_default_title">Search more than 298M repositories</string>
+</resources>

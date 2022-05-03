@@ -22,24 +22,20 @@ android {
         viewBinding true
     }
 
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "GITHUB_URL", "\"https://api.github.com/\""
-            buildConfigField "Long", "GITHUB_CONNECT_TIMEOUT", "15L"
-            buildConfigField "Long", "GITHUB_READ_TIMEOUT", "15L"
-            buildConfigField "Long", "GITHUB_WRITE_TIMEOUT", "15L"
         }
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "GITHUB_URL", "\"https://api.github.com/\""
-            buildConfigField "Long", "GITHUB_CONNECT_TIMEOUT", "15L"
-            buildConfigField "Long", "GITHUB_READ_TIMEOUT", "15L"
-            buildConfigField "Long", "GITHUB_WRITE_TIMEOUT", "15L"
         }
     }
+
     compileOptions {
         sourceCompatibility "11"
         targetCompatibility "11"
@@ -52,6 +48,12 @@ android {
 dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    implementation project(':ui-search')
+    implementation project(':ui-components')
+    implementation project(':core')
+    implementation project(':datasource')
+    implementation project(':domain')
 
     //UI dependencies
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -77,7 +79,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
 
     //Networking dependencies
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
