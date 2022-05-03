@@ -19,6 +19,16 @@ There are no rules or guidelines on how to perform the task apart from the ones 
 * Custom Fonts
 * Light/Dark theme
 
+### Architecture
+The app has following packages:
+
+* app - as an entry point, di, and root activity
+* ui-search - search functionality
+* ui-components - common components for ui-feature modules
+* domain - layer with bisiness logic for orchestration of the datasources
+* datasource - sources of data, for the challenge only network
+* core - module for common of all the modules
+
 ### Screenshots
 <div id="screenshot3">
     <img src="https://user-images.githubusercontent.com/9091709/166574114-1797d00d-2e0b-4eee-ac06-a7f9eb040c23.jpg"  width="432" height="936"/>
