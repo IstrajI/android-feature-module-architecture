@@ -1,0 +1,67 @@
+ext {
+    versions = [
+            compileSdkVersion: 32,
+            buildToolsVersion: "32.0.0",
+            minSdkVersion: 23,
+            targetSdkVersion: 32,
+            core: "1.7.0",
+            appCompatVersion: "1.4.1",
+            materialVersion: "1.5.0",
+            constraintLayoutVersion: "2.1.3",
+            fragmentVersion: "1.4.1",
+            navigationVersion: "2.4.2",
+            daggerVersion: "2.40.5",
+            daggerAndroidVersion: "2.27",
+            coroutinesVersion: "1.6.1",
+            lifecycleVersion: "2.4.1",
+            retrofitVersion: "2.9.0",
+            okHttpVersion: "4.9.3",
+            okHttpLoggingVersion: "4.9.1",
+            jUnitVersion: "4.13.2",
+            extVersion: "1.1.3",
+            espressoVersion: "3.4.0"
+    ]
+
+    libraries = [
+            core: "androidx.core:core-ktx:${versions.core}",
+            appCompat: "androidx.appcompat:appcompat:${versions.appCompatVersion}",
+            material: "com.google.android.material:material:${versions.materialVersion}",
+            constraintLayout: "androidx.constraintlayout:constraintlayout:${versions.constraintLayoutVersion}",
+            fragment: "androidx.fragment:fragment-ktx:${versions.fragmentVersion}",
+            navigation: [
+                    "androidx.navigation:navigation-compose:${versions.navigationVersion}",
+                    "androidx.navigation:navigation-fragment-ktx:${versions.navigationVersion}",
+                    "androidx.navigation:navigation-ui-ktx:${versions.navigationVersion}",
+                    "androidx.navigation:navigation-dynamic-features-fragment:${versions.navigationVersion}"
+            ],
+            dagger: [
+                    "com.google.dagger:dagger:${versions.daggerVersion}",
+                    "com.google.dagger:dagger-android:${versions.daggerVersion}",
+                    "com.google.dagger:dagger-android-support:${versions.daggerAndroidVersion}"
+            ],
+            coroutines: [
+                    "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutinesVersion}",
+                    "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutinesVersion}",
+            ],
+            lifecycle: "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycleVersion}",
+            retrofit: [
+                    "com.squareup.retrofit2:retrofit:${versions.retrofitVersion}",
+                    "com.squareup.retrofit2:converter-gson:${versions.retrofitVersion}"
+            ],
+            okHttp: [
+                    "com.squareup.okhttp3:okhttp:${versions.okHttpVersion}",
+                    "com.squareup.okhttp3:logging-interceptor:${versions.okHttpLoggingVersion}"
+            ]
+    ]
+
+    annotationProcessors = [
+            "com.google.dagger:dagger-compiler:${versions.daggerVersion}",
+            "com.google.dagger:dagger-android-processor:${versions.daggerAndroidVersion}"
+    ]
+
+    testLibraries = [
+            jUnit: "junit:junit:${versions.jUnitVersion}",
+            ext: "androidx.test.ext:junit:${versions.extVersion}",
+            espresso: "androidx.test.espresso:espresso-core:${versions.espressoVersion}"
+    ]
+}

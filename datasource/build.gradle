@@ -5,17 +5,8 @@ plugins {
 }
 
 android {
-    compileSdkVersion 32
-    buildToolsVersion "32.0.0"
-/*
-    defaultConfig {
-        minSdkVersion 23
-        targetSdkVersion 32
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }*/
+    compileSdkVersion versions.compileSdkVersion
+    buildToolsVersion versions.buildToolsVersion
 
     buildTypes {
         release {
@@ -35,20 +26,16 @@ android {
             buildConfigField "Long", "GITHUB_WRITE_TIMEOUT", "15L"
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
 }
 
 dependencies {
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
     implementation project(':core')
-    //Networking dependencies
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation "com.squareup.retrofit2:retrofit:2.9.0"
-    implementation "com.squareup.okhttp3:okhttp:4.9.3"
-    implementation "com.squareup.okhttp3:logging-interceptor:4.9.1"
-    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
-
-    implementation 'com.google.dagger:dagger:2.40.5'
-    kapt 'com.google.dagger:dagger-compiler:2.40.5'
+    implementation libraries.retrofit
+    implementation libraries.okHttp
+    implementation libraries.dagger
+    kapt annotationProcessors
 }
