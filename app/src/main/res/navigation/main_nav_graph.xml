@@ -10,4 +10,14 @@
         android:name="com.nikitin.ui_search.SearchFeatureFragment"
         android:label="SearchFeatureFragment"
         tools:layout="@layout/fragment_repository_search"/>
+
+    <fragment
+        android:id="@+id/detailsFeatureFragment"
+        android:name="com.nikitin.ui_details.DetailsFeatureFragment"
+        android:label="DetailsFeatureFragment"
+        tools:layout="@layout/fragment_details_repository">
+        <deepLink
+            app:uri="@string/feature_details_deep_link">
+        </deepLink>
+    </fragment>
 </navigation>

@@ -8,4 +8,6 @@
         <item quantity="one">%1$d day ago</item>
         <item quantity="other">%1$d days ago</item>
     </plurals>
+
+    <string name="feature_details_deep_link">deeplink://com.nikitin.githubsearchchallenge/details_feature_fragment/?repository_url={repository_url}</string>
 </resources>

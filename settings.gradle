@@ -1,7 +1,8 @@
-include ':app'
 rootProject.name = "GitHubSearchChallenge"
+include ':app'
 include ':ui-search'
 include ':domain'
 include ':datasource'
 include ':core'
 include ':ui-components'
+include ':ui-details'

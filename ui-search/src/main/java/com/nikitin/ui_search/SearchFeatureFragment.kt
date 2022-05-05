@@ -9,12 +9,17 @@ import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.nikitin.core.di.ViewModelFactory
+import com.nikitin.ui_components.DeepLinkNavigator
+import com.nikitin.ui_components.navigation.models.DetailsFeatureNavArgs
 import com.nikitin.ui_search.databinding.FragmentSearchFeatureBinding
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
 class SearchFeatureFragment : DaggerFragment() {
+    @Inject
+    lateinit var navigator: DeepLinkNavigator
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
     private val viewModel by viewModels<SearchFeatureViewModel> { viewModelFactory }
@@ -48,5 +53,11 @@ class SearchFeatureFragment : DaggerFragment() {
             }
             false
         })
+    }
+
+    fun searchItemClicked(url: String) {
+        requireParentFragment().findNavController().navigate(navigator.getDetailsNavDeepLinkRequest(
+            DetailsFeatureNavArgs(url)
+        ))
     }
 }

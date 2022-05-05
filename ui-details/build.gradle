@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
@@ -9,23 +9,13 @@ android {
     compileSdkVersion versions.compileSdkVersion
     buildToolsVersion versions.buildToolsVersion
 
-    defaultConfig {
-        applicationId "com.nikitin.githubsearchchallenge"
-        minSdkVersion versions.minSdkVersion
-        targetSdkVersion versions.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
     buildFeatures {
         viewBinding true
     }
-
-
+    
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
@@ -43,12 +33,9 @@ android {
 }
 
 dependencies {
-    implementation project(':ui-search')
-    implementation project(':ui-details')
-    implementation project(':ui-components')
     implementation project(':core')
-    implementation project(':datasource')
     implementation project(':domain')
+    implementation project(':ui-components')
 
     implementation libraries.core
     implementation libraries.appCompat
@@ -60,8 +47,6 @@ dependencies {
     kapt annotationProcessors
     implementation libraries.coroutines
     implementation libraries.lifecycle
-    implementation libraries.retrofit
-    implementation libraries.okHttp
 
     testImplementation testLibraries.jUnit
     androidTestImplementation testLibraries.ext

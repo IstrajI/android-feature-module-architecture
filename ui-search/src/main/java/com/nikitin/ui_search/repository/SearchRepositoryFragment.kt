@@ -13,7 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nikitin.ui_search.databinding.FragmentRepositorySearchBinding
 import com.nikitin.core.di.ViewModelFactory
+import com.nikitin.extensions.requireGrandParentFragment
 import com.nikitin.ui_search.R
+import com.nikitin.ui_search.SearchFeatureFragment
 import com.nikitin.ui_search.SearchFeatureViewModel
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
@@ -22,8 +24,7 @@ class SearchRepositoryFragment : DaggerFragment() {
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
     private val viewModel by viewModels<SearchRepositoryViewModel> { viewModelFactory }
-    private val featureViewModel by viewModels<SearchFeatureViewModel>({ requireParentFragment().requireParentFragment() }) { viewModelFactory }
-
+    private val featureViewModel by viewModels<SearchFeatureViewModel>({ requireGrandParentFragment() }) { viewModelFactory }
     private var _binding: FragmentRepositorySearchBinding? = null
     private val binding get() = _binding!!
 
@@ -38,14 +39,15 @@ class SearchRepositoryFragment : DaggerFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         initList()
         initSearch()
         initStates()
     }
 
     private fun initList() {
-        val searchRepositoryAdapter = SearchRepositoryAdapter()
+        val searchRepositoryAdapter = SearchRepositoryAdapter { url: String ->
+            (requireGrandParentFragment() as SearchFeatureFragment).searchItemClicked(url)
+        }
         binding.repositoryList.apply {
             adapter = searchRepositoryAdapter
             val horizontalDecoration =

@@ -4,7 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.nikitin.core.di.ViewModelFactory
 import com.nikitin.core.di.ViewModelKey
-import com.nikitin.githubsearchchallenge.main.MainViewModel
+import com.nikitin.githubsearchchallenge.main_activity.MainViewModel
+import com.nikitin.ui_details.DetailsFeatureViewModel
+import com.nikitin.ui_details.repository.DetailsRepositoryViewModel
 import com.nikitin.ui_search.SearchFeatureViewModel
 import com.nikitin.ui_search.repository.SearchRepositoryViewModel
 import dagger.Binds
@@ -30,4 +32,14 @@ abstract class ViewModelBindingModule {
     @IntoMap
     @ViewModelKey(SearchFeatureViewModel::class)
     abstract fun bindSearchFeatureViewModel(searchFeatureViewModel: SearchFeatureViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(DetailsFeatureViewModel::class)
+    abstract fun bindDetailsFeatureViewModel(detailsFeatureFragment: DetailsFeatureViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(DetailsRepositoryViewModel::class)
+    abstract fun bindDetailsRepositoryViewModel(detailsRepositoryViewModel: DetailsRepositoryViewModel): ViewModel
 }

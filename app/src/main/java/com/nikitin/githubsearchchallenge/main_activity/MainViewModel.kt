@@ -1,4 +1,4 @@
-package com.nikitin.githubsearchchallenge.main
+package com.nikitin.githubsearchchallenge.main_activity
 
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject
