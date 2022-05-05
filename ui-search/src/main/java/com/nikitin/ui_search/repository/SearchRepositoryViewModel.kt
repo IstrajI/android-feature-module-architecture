@@ -37,7 +37,7 @@ class SearchRepositoryViewModel @Inject constructor(
     private var lastSearchPage = FIRST_PAGE
 
     fun search(phrase: String) = viewModelScope.launch(Dispatchers.IO) {
-        if (_isLoading.value == true) return@launch
+        if (_isLoading.value == true || phrase == lastSearchName) return@launch
         _isLoading.postValue(true)
 
         val searchResults = repositoryInteractor.searchRepository(
