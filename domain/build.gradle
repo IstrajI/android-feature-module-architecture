@@ -31,7 +31,4 @@ dependencies {
 
     implementation libraries.dagger
     kapt annotationProcessors
-    testImplementation testLibraries.jUnit
-    androidTestImplementation testLibraries.ext
-    androidTestImplementation testLibraries.espresso
 }

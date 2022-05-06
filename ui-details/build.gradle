@@ -47,8 +47,4 @@ dependencies {
     kapt annotationProcessors
     implementation libraries.coroutines
     implementation libraries.lifecycle
-
-    testImplementation testLibraries.jUnit
-    androidTestImplementation testLibraries.ext
-    androidTestImplementation testLibraries.espresso
 }

@@ -39,8 +39,4 @@ dependencies {
     implementation libraries.dagger
     implementation libraries.navigation
     kapt annotationProcessors
-
-    testImplementation testLibraries.jUnit
-    androidTestImplementation testLibraries.ext
-    androidTestImplementation testLibraries.espresso
 }
