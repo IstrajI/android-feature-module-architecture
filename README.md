@@ -1,6 +1,7 @@
 # Android Feature Module Architecture
 ### Summary
 Example of multimodule complex android architecture, wich is ready to use in a big projects
+
 API: [https://developer.github.com/v3/search](https://developer.github.com/v3/search).
 
 ### What were used
