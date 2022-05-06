@@ -11,31 +11,28 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.nikitin.base.BaseFragment
 import com.nikitin.ui_search.databinding.FragmentRepositorySearchBinding
 import com.nikitin.core.di.module.ViewModelFactory
 import com.nikitin.extensions.requireGrandParentFragment
 import com.nikitin.ui_search.R
 import com.nikitin.ui_search.SearchFeatureFragment
 import com.nikitin.ui_search.SearchFeatureViewModel
+import com.nikitin.ui_search.databinding.FragmentSearchFeatureBinding
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
-class SearchRepositoryFragment : DaggerFragment() {
-    @Inject
-    lateinit var viewModelFactory: ViewModelFactory
+class SearchRepositoryFragment : BaseFragment<FragmentRepositorySearchBinding>() {
     private val viewModel by viewModels<SearchRepositoryViewModel> { viewModelFactory }
     private val featureViewModel by viewModels<SearchFeatureViewModel>({ requireGrandParentFragment() }) { viewModelFactory }
-    private var _binding: FragmentRepositorySearchBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentRepositorySearchBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+    override val bindingInflater =
+        { layoutInflater: LayoutInflater, viewGroup: ViewGroup?, attachToParent: Boolean ->
+            FragmentRepositorySearchBinding.inflate(
+                layoutInflater,
+                viewGroup,
+                attachToParent
+            )
+        }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -97,10 +94,5 @@ class SearchRepositoryFragment : DaggerFragment() {
         viewModel.isLoading.observe(viewLifecycleOwner) {
             binding.progressBar.isVisible = it
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

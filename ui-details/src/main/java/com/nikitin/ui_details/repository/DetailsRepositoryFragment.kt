@@ -5,31 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.nikitin.core.di.module.ViewModelFactory
+import com.nikitin.base.BaseFragment
 import com.nikitin.extensions.requireGrandParentFragment
 import com.nikitin.ui_details.DetailsFeatureViewModel
 import com.nikitin.ui_details.databinding.FragmentDetailsRepositoryBinding
-import dagger.android.support.DaggerFragment
-import javax.inject.Inject
 
-class DetailsRepositoryFragment : DaggerFragment() {
-
-    @Inject
-    lateinit var viewModelFactory: ViewModelFactory
+class DetailsRepositoryFragment : BaseFragment<FragmentDetailsRepositoryBinding>() {
     private val viewModel by viewModels<DetailsFeatureViewModel> { viewModelFactory }
     private val featureViewModel by viewModels<DetailsFeatureViewModel>({ requireGrandParentFragment() }) { viewModelFactory }
-    private var _binding: FragmentDetailsRepositoryBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentDetailsRepositoryBinding.inflate(inflater, container, false)
-        return binding.root
-
-    }
+    override val bindingInflater =
+        { layoutInflater: LayoutInflater, viewGroup: ViewGroup?, attachToParent: Boolean ->
+            FragmentDetailsRepositoryBinding.inflate(
+                layoutInflater,
+                viewGroup,
+                attachToParent
+            )
+        }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -7,7 +7,9 @@ plugins {
 android {
     compileSdkVersion versions.compileSdkVersion
     buildToolsVersion versions.buildToolsVersion
-
+    buildFeatures {
+        viewBinding true
+    }
     buildTypes {
         release {
             minifyEnabled true
@@ -30,6 +32,7 @@ android {
 }
 
 dependencies {
+    implementation project(':core')
     implementation libraries.core
     implementation libraries.appCompat
     implementation libraries.material
