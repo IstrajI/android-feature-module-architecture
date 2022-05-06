@@ -1,4 +1,4 @@
-package com.nikitin.core.di
+package com.nikitin.core.di.keys
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey

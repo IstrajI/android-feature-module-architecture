@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nikitin.ui_search.databinding.FragmentRepositorySearchBinding
-import com.nikitin.core.di.ViewModelFactory
+import com.nikitin.core.di.module.ViewModelFactory
 import com.nikitin.extensions.requireGrandParentFragment
 import com.nikitin.ui_search.R
 import com.nikitin.ui_search.SearchFeatureFragment

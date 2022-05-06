@@ -1,4 +1,4 @@
-package com.nikitin.core.di
+package com.nikitin.core.di.module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

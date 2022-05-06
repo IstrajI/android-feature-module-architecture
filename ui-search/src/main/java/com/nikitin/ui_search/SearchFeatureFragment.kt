@@ -10,7 +10,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.nikitin.core.di.ViewModelFactory
+import com.nikitin.core.di.module.ViewModelFactory
 import com.nikitin.ui_components.DeepLinkNavigator
 import com.nikitin.ui_components.navigation.models.DetailsFeatureNavArgs
 import com.nikitin.ui_search.databinding.FragmentSearchFeatureBinding

@@ -50,18 +50,10 @@ dependencies {
     implementation project(':datasource')
     implementation project(':domain')
 
-    implementation libraries.core
-    implementation libraries.appCompat
-    implementation libraries.material
-    implementation libraries.constraintLayout
-    implementation libraries.fragment
-    implementation libraries.navigation
     implementation libraries.dagger
     kapt annotationProcessors
-    implementation libraries.coroutines
-    implementation libraries.lifecycle
-    implementation libraries.retrofit
-    implementation libraries.okHttp
+    compileOnly libraries.retrofit
+    compileOnly libraries.okHttp
 
     testImplementation testLibraries.jUnit
     androidTestImplementation testLibraries.ext

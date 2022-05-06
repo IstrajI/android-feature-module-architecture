@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.nikitin.core.di.ViewModelFactory
+import com.nikitin.core.di.module.ViewModelFactory
 import com.nikitin.ui_components.DeepLinkNavigator
 import com.nikitin.ui_components.navigation.models.DetailsFeatureNavArgs
 import com.nikitin.ui_details.databinding.FragmentDetailsFeatureBinding

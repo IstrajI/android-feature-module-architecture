@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.nikitin.core.di.ViewModelFactory
+import com.nikitin.core.di.module.ViewModelFactory
 import com.nikitin.extensions.requireGrandParentFragment
 import com.nikitin.ui_details.DetailsFeatureViewModel
 import com.nikitin.ui_details.databinding.FragmentDetailsRepositoryBinding
