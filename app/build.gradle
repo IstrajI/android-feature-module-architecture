@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -53,4 +55,7 @@ dependencies {
     kapt annotationProcessors
     compileOnly libraries.retrofit
     compileOnly libraries.okHttp
+    implementation platform(libraries.bom)
+    implementation libraries.analytics
+    implementation libraries.crashlytics
 }

@@ -19,7 +19,9 @@ ext {
             okHttpLoggingVersion: "4.9.1",
             jUnitVersion: "4.13.2",
             extVersion: "1.1.3",
-            espressoVersion: "3.4.0"
+            espressoVersion: "3.4.0",
+            crashlyticsVersion: "18.2.11",
+            bomVersion: "30.1.0"
     ]
 
     libraries = [
@@ -51,7 +53,10 @@ ext {
             okHttp: [
                     "com.squareup.okhttp3:okhttp:${versions.okHttpVersion}",
                     "com.squareup.okhttp3:logging-interceptor:${versions.okHttpLoggingVersion}"
-            ]
+            ],
+            crashlytics: "com.google.firebase:firebase-crashlytics:${versions.crashlyticsVersion}",
+            analytics: "com.google.firebase:firebase-analytics-ktx",
+            bom: "com.google.firebase:firebase-bom:${versions.bomVersion}"
     ]
 
     annotationProcessors = [
